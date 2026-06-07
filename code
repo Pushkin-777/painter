@@ -1,0 +1,93 @@
+from turtle import *
+
+t = Turtle()
+t.pensize(5)
+t.shape('circle')
+t.speed(0)
+t.color('red')
+
+
+
+
+
+
+def green():
+    t.color('green')
+
+def red():
+    t.color('red')
+
+def blue():
+    t.color('blue')
+
+
+def black():
+    t.color('black')
+
+def white():
+    t.color('white')
+
+def sky_blue():
+    t.color('skyblue')
+
+def orange():
+    t.color('orange')
+
+
+
+def right():
+    t.goto(t.xcor()+5,t.ycor())
+
+def left():
+    t.goto(t.xcor()-5,t.ycor())
+
+def up():
+    t.goto(t.xcor(),t.ycor()+5)
+
+def down():
+    t.goto(t.xcor(),t.ycor()-5)
+
+
+
+
+
+
+
+
+
+
+def go(x,y):
+    t.goto(x,y)
+
+
+def move(x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+
+
+
+t.ondrag(go)
+
+scr = t.getscreen()
+scr.onscreenclick(move)
+
+scr.listen()
+scr.onkey(green,'g')
+scr.onkey(red,'r')
+scr.onkey(blue,'b')
+scr.onkey(black,'7')
+scr.onkey(white,'w')
+scr.onkey(orange,'o')
+scr.onkey(sky_blue,'s')
+
+
+scr.onkey(up,'Up')
+scr.onkey(right,'Right')
+scr.onkey(left,'Left')
+scr.onkey(down,'Down')
+
+
+
+
+exitonclick()
