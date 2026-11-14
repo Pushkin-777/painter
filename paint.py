@@ -1,4 +1,5 @@
 from turtle import *
+from paint_module import *
 
 t = Turtle()
 t.pensize(5)
@@ -19,7 +20,6 @@ def red():
 
 def blue():
     t.color('blue')
-
 
 def black():
     t.color('black')
@@ -47,12 +47,20 @@ def up():
 def down():
     t.goto(t.xcor(),t.ycor()-5)
 
+def size_1():
+    t.pensize(5)
 
+def size_2():
+    t.pensize(10)
 
+def size_3():
+    t.pensize(25)
 
+def white_bg():
+    scr.bgcolor('white')
 
-
-
+def black_bg():
+    scr.bgcolor('black')
 
 
 
@@ -66,20 +74,22 @@ def move(x,y):
     t.pendown()
 
 
-
 t.ondrag(go)
 
 scr = t.getscreen()
 scr.onscreenclick(move)
+scr.setup(500,500)
+scr.tracer(0)
+
 
 scr.listen()
-scr.onkey(green,'g')
-scr.onkey(red,'r')
-scr.onkey(blue,'b')
-scr.onkey(black,'7')
-scr.onkey(white,'w')
-scr.onkey(orange,'o')
-scr.onkey(sky_blue,'s')
+scr.onkey(green,'1')
+scr.onkey(red,'2')
+scr.onkey(blue,'3')
+scr.onkey(black,'4')
+scr.onkey(white,'5')
+scr.onkey(orange,'6')
+scr.onkey(sky_blue,'7')
 
 
 scr.onkey(up,'Up')
@@ -88,6 +98,14 @@ scr.onkey(left,'Left')
 scr.onkey(down,'Down')
 
 
+scr.onkey(size_1,'a')
+scr.onkey(size_2,'s')
+scr.onkey(size_3,'d')
+
+scr.onkey(white_bg,'9')
+scr.onkey(black_bg,'0')
 
 
-exitonclick()
+
+while True:
+    scr.update()
